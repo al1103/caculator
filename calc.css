@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+html{
+  overflow: hidden;
+}
+:root{
+  --total:-7px;
+  --tatol:7px;
+}
+.computer {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 80px auto;
+  height: 440px;
+  box-shadow: 0 2px 15px 10px rgba(0, 0, 0, 0.411);
+  border-radius: 8px;
+  
+}
+#display {
+  height: calc(100% / 4.5);
+  width: 95%;
+  margin: 7px;
+  border: 1px solid black;
+  text-align: right;
+  padding: 30px 10px;
+  font-size: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.644);
+  overflow: hidden;
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.button {
+  text-align: center;
+  padding: auto;
+  border: 1px solid black;
+  line-height: 50px;
+  margin: 5px 10px;
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+  position: relative;
+  border-radius: 3px;
+  user-select: none;
+  box-shadow: 0px 0px 5px 0.5px rgba(168, 167, 167, 0.904);
+  font-weight: bold;
+}
+.button::before {
+  content: "";
+  position: absolute;
+  left: var(--total);
+
+  height: 100%;
+  width: var(--tatol);
+  background-color: rgba(92, 92, 92, 0.651);
+  top: 4px;
+  transform: skewY(310deg);
+}
+.button::after {
+  content: "";
+  position: absolute;
+  height: var(--tatol);
+  width: 100%;
+  background-color: rgba(95, 95, 95, 0.651);
+  bottom: -7px;
+  left: -4px;
+  transform: skewX(-41deg);
+}
+.calc{
+  background-color:#00a6ff;
+}
+@media only screen and (max-width :391px) {
+  .computer{
+    width: 360px;
+  }
+  .content{
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-content: center;
+  }
+  .button {
+    line-height: 25px;
+    width: 75px;
+    height: 35px;
+  }
+
+}
+.text-zilong{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+  font-family: 'Rubik Glitch',cursive;;
+  user-select: none;
+}
